@@ -138,7 +138,7 @@ class Parser_SuperCategory {
     
     private static function getGoodsByUrls($urls, $ch) {
         $file = realpath(dirname(__FILE__)."/../urls.txt");
-        $db = DBManager::get('mysql', 'localhost', '3306', 'root', '123', DB);
+        $db = DBManager::get(DB_ADAPTER, DB_HOST, DB_PORT, DB_USER, DB_PASS, DB);
         $db->exec("SET NAMES utf8; SET CHARACTER SET utf8");
         $stmt = $db ->prepare("INSERT INTO ".DB_TABLE." (name, articul, description, price, info, features) VALUES(:name, :art, :desc, :price, :info, :features)");
         foreach ($urls as $url) {

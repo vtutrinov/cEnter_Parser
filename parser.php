@@ -13,7 +13,6 @@ require_once 'Loader.php';
 spl_autoload_register(array('Loader', 'autoload'));
 require_once 'database/ClassLoader.php';
 spl_autoload_register(array('ClassLoader', 'autoload'));
-/*
 //$proxies = file(dirname(__FILE__)."/proxies.txt");
 //$php = array();
 //foreach ($proxies as $line => $pr) {
@@ -47,7 +46,6 @@ for ($i = 0; $i < $superCategoryCount; $i++) {
     $joinPoint->add($threads[$i]);
 }
 $joinPoint->waitTillReady();
-*/
 //read input xml file
 $dom = new DOMDocument('1.0', 'utf-8');
 $dom -> formatOutput = true;
