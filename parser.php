@@ -67,7 +67,6 @@ for ($i = 0; $i < $c; $i++) {
     $result = $stmt->execute();
     if ($result) {
         $row = $stmt->fetch();
-        var_dump($row);
         $domf = new DOMDocument();
         $domf -> loadXML($row['features']);
         $infoNode = $dom->createElement("info", $row["info"]);
@@ -78,5 +77,5 @@ for ($i = 0; $i < $c; $i++) {
         $item->appendChild($dom->importNode($features, true));
     }
 }
-$dom->saveXML(dirname(__FILE__)."/output.xml");
+$dom->save(dirname(__FILE__)."/output.xml");
 ?>
