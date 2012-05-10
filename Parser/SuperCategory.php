@@ -184,12 +184,12 @@ class Parser_SuperCategory {
             $propValues = $descElements[2];
             $c = sizeof($propNames);
             $featuresDom = new DOMDocument();
-            $featuresDom -> encoding = 'UTF-8';
+            $featuresDom -> encoding = 'utf-8';
             $featuresNode = $featuresDom -> createElement("features", "");
             for ($i = 0; $i < $c; $i++) {
                 $featureNode = $featuresDom -> createElement("feature", "");
-                $featureNameNode = $featuresDom -> createElement("name", htmlentities(trim($propNames[$i], " ")));
-                $featureValueNode = $featuresDom -> createElement("value", htmlentities(trim($propValues[$i], " ")));
+                $featureNameNode = $featuresDom -> createElement("name", htmlentities(trim($propNames[$i], " "), ENT_QUOTES, 'UTF-8'));
+                $featureValueNode = $featuresDom -> createElement("value", htmlentities(trim($propValues[$i], " "), ENT_QUOTES, 'UTF-8'));
                 $featureNode ->appendChild($featureNameNode);
                 $featureNode->appendChild($featureValueNode);
                 $featuresNode->appendChild($featureNode);

@@ -3,11 +3,17 @@ error_reporting(E_ALL^E_NOTICE);
 define("BASE_URL", "http://www.enter.ru");
 define("DB", "center");
 define("DB_TABLE", "goods");
+define("DB_USER", "root");
+define("DB_PASS", "123");
+define("DB_ADAPTER", "mysql");
+define("DB_PORT", '3306');
+define("DB_HOST", '127.0.0.1');
 require_once dirname(__FILE__).'/Threadi/Loader.php';
 require_once 'Loader.php';
 spl_autoload_register(array('Loader', 'autoload'));
 require_once 'database/ClassLoader.php';
 spl_autoload_register(array('ClassLoader', 'autoload'));
+/*
 //$proxies = file(dirname(__FILE__)."/proxies.txt");
 //$php = array();
 //foreach ($proxies as $line => $pr) {
@@ -41,4 +47,38 @@ for ($i = 0; $i < $superCategoryCount; $i++) {
     $joinPoint->add($threads[$i]);
 }
 $joinPoint->waitTillReady();
+*/
+//read input xml file
+$dom = new DOMDocument('1.0', 'utf-8');
+$dom -> formatOutput = true;
+$dom -> load(dirname(__FILE__)."/input.xml");
+$items = $dom->getElementsByTagName("item");
+$db = DBManager::get(DB_ADAPTER, DB_HOST, DB_PORT, DB_USER, DB_PASS, DB);
+$db->exec("SET NAMES utf8; SET CHARACTER SET utf8;");
+//$db->exec("SELECT * FROM")
+$stmt = $db -> prepare("SELECT * FROM ".DB_TABLE." WHERE name LIKE :full_name OR name LIKE :en_name OR name LIKE :ru_name LIMIT 1");
+$c = $items->length;
+for ($i = 0; $i < $c; $i++) {
+    $item = &$items->item($i);
+    $name = "%".$item->getElementsByTagName("name")->item(0)->nodeValue."%";
+    $shortName = "%".$item->getElementsByTagName("shortname")->item(0)->nodeValue."%";
+    $ruName = "%".$item->getElementsByTagName("rusname")->item(0)->nodeValue."%";
+    $stmt->bindParam(":full_name", $name, PDO::PARAM_STR);
+    $stmt->bindParam(":en_name", $shortName, PDO::PARAM_STR);
+    $stmt->bindParam(":ru_name", $ruName, PDO::PARAM_STR);
+    $result = $stmt->execute();
+    if ($result) {
+        $row = $stmt->fetch();
+        var_dump($row);
+        $domf = new DOMDocument();
+        $domf -> loadXML($row['features']);
+        $infoNode = $dom->createElement("info", $row["info"]);
+        $descNode = $dom->createElement("description", $row['description']);
+        $features = $domf->getElementsByTagName('features')->item(0);
+        $item->appendChild($descNode);
+        $item->appendChild($infoNode);
+        $item->appendChild($dom->importNode($features, true));
+    }
+}
+$dom->saveXML(dirname(__FILE__)."/output.xml");
 ?>
