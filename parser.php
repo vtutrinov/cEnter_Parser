@@ -8,6 +8,7 @@ define("DB_PASS", "123");
 define("DB_ADAPTER", "mysql");
 define("DB_PORT", '3306');
 define("DB_HOST", '127.0.0.1');
+define("THREADS_COUNT", 13);
 require_once dirname(__FILE__).'/Threadi/Loader.php';
 require_once 'Loader.php';
 spl_autoload_register(array('Loader', 'autoload'));
@@ -40,6 +41,9 @@ $proxies = require_once 'proxies.php';
 $proxiesCount = sizeof($proxies);
 $treadProxyCount = floor($proxiesCount/$superCategoryCount);
 file_put_contents(dirname(__FILE__)."/urls.txt", "");
+$db = DBManager::get(DB_ADAPTER, DB_HOST, DB_PORT, DB_USER, DB_PASS, DB);
+$db->exec("TRUNCATE TABLE goods;");
+$db = null;
 for ($i = 0; $i < $superCategoryCount; $i++) {
     $threads[$i] = Threadi_ThreadFactory::getReturnableThread(array('Parser_SuperCategory', 'parse'));
     $threads[$i] -> start($matches[1][$i], Parser_Proxy::getProxyList($superCategoryCount, $i));
@@ -47,35 +51,4 @@ for ($i = 0; $i < $superCategoryCount; $i++) {
 }
 $joinPoint->waitTillReady();
 //read input xml file
-$dom = new DOMDocument('1.0', 'utf-8');
-$dom -> formatOutput = true;
-$dom -> load(dirname(__FILE__)."/input.xml");
-$items = $dom->getElementsByTagName("item");
-$db = DBManager::get(DB_ADAPTER, DB_HOST, DB_PORT, DB_USER, DB_PASS, DB);
-$db->exec("SET NAMES utf8; SET CHARACTER SET utf8;");
-//$db->exec("SELECT * FROM")
-$stmt = $db -> prepare("SELECT * FROM ".DB_TABLE." WHERE name LIKE :full_name OR name LIKE :en_name OR name LIKE :ru_name LIMIT 1");
-$c = $items->length;
-for ($i = 0; $i < $c; $i++) {
-    $item = &$items->item($i);
-    $name = "%".$item->getElementsByTagName("name")->item(0)->nodeValue."%";
-    $shortName = "%".$item->getElementsByTagName("shortname")->item(0)->nodeValue."%";
-    $ruName = "%".$item->getElementsByTagName("rusname")->item(0)->nodeValue."%";
-    $stmt->bindParam(":full_name", $name, PDO::PARAM_STR);
-    $stmt->bindParam(":en_name", $shortName, PDO::PARAM_STR);
-    $stmt->bindParam(":ru_name", $ruName, PDO::PARAM_STR);
-    $result = $stmt->execute();
-    if ($result) {
-        $row = $stmt->fetch();
-        $domf = new DOMDocument();
-        $domf -> loadXML($row['features']);
-        $infoNode = $dom->createElement("info", $row["info"]);
-        $descNode = $dom->createElement("description", $row['description']);
-        $features = $domf->getElementsByTagName('features')->item(0);
-        $item->appendChild($descNode);
-        $item->appendChild($infoNode);
-        $item->appendChild($dom->importNode($features, true));
-    }
-}
-$dom->save(dirname(__FILE__)."/output.xml");
 ?>
