@@ -22,6 +22,13 @@ class SphinxAdapter {
         }
         return $sSphinxKeyword;
     }
+    
+    public static function escapeString($string) {
+        $from = array ( '\\', '(',')','|','-','!','@','~','"','&', '/', '^', '$', '=' );
+        $to   = array ( '\\\\', '\(','\)','\|','\-','\!','\@','\~','\"', '\&', '\\/', '\^', '\$', '\=' );
+
+        return str_replace ( $from, $to, $string );
+    }
 
 }
 

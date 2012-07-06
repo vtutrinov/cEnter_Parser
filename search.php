@@ -5,19 +5,20 @@ require_once dirname(__FILE__).'/Threadi/Loader.php';
 require_once 'database/ClassLoader.php';
 spl_autoload_register(array('ClassLoader', 'autoload'));
 require_once 'sphinxapi.php';
+require_once 'SphinxAdapter.php';
 
 //$sphinx = new SphinxClient();
 //$sphinx->SetServer("localhost", 9312);
 //$sphinx->SetMatchMode(SPH_MATCH_EXTENDED);
 //$sphinx->SetRankingMode(SPH_RANK_SPH04);
 //$sphinx->SetSortMode(SPH_SORT_RELEVANCE);
-//$result = $sphinx->query('"Вытяжка Krona Stella 5P 600"/1', "centerGoods");
-//var_dump($result['matches']);
+//$result = $sphinx->query('"Варочная панель Krona IGM 2604 E"/1', "centerGoods");
+//print_r(array_keys($result['matches']));
 
-$db = DBManager::get('mysql', '127.0.0.1', '3307', '', '', '');
-$r = $db->query("SELECT * from centerGoods WHERE MATCH('Вытяжка Krona Stella 5P 600 aerg54') OPTION ranker=sph04")->fetch();
-var_dump($r);
-return;
+//$db = DBManager::get('mysql', '127.0.0.1', '3307', '', '', '');
+//$r = $db->query("SELECT * FROM centerGoods WHERE MATCH('Варочная панель Krona IGM 2604 E') ORDER BY @weight DESC OPTION ranker=sph04")->fetch();
+//var_dump($r);
+//return;
 define("DB", "center");
 define("DB_TABLE", "goods");
 define("DB_USER", "root");
@@ -25,7 +26,7 @@ define("DB_PASS", "123");
 define("DB_ADAPTER", "mysql");
 define("DB_PORT", '3306');
 define("DB_HOST", '127.0.0.1');
-define("THREADS_COUNT", 13);
+define("THREADS_COUNT", 10);
 
 $dom = new DOMDocument('1.0', 'utf-8');
 $dom -> formatOutput = true;
@@ -46,7 +47,7 @@ $result = array();
 $defined = 0;
 for ($j = 0; $j < THREADS_COUNT; $j++) {
     $res = unserialize($threads[$j] ->getResult());
-    $result = $res['xml'];
+    $result[] = $res['xml'];
     $defined += intval($res['defined']);
 }
 $str = implode(PHP_EOL, $result);
@@ -75,21 +76,31 @@ class XmlAnalizer {
         $items = $doc->getElementsByTagName("item");
         $db = DBManager::get(DB_ADAPTER, DB_HOST, DB_PORT, DB_USER, DB_PASS, DB);
         $db->exec("SET NAMES utf8; SET CHARACTER SET utf8;");
-        $dbSphinx = DBManager::get(DB_ADAPTER, DB_HOST, '3307', '', '', '');
+        $goodQueryStatement = $db ->prepare("SELECT description, info, features FROM goods WHERE id=:id");
+        
+        
+        $config = new stdClass();
+        $config -> adapter = DB_ADAPTER;
+        $config -> params -> host = DB_HOST;
+        $config -> params -> port = "3307";
+        $config -> params -> user = "";
+        $config -> params -> pwd = "";
+        $config -> params -> dbname = "";
+        $dbSphinx = new DB($config);
+        $dbSphinx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stm = $dbSphinx->prepare("SELECT * FROM centerGoods WHERE MATCH(:name) OPTION ranker=sph04");
         $k = 0;
         for ($i = $start; $i < $end; $i++) {
             $item = $items->item($i);
-            $name = $item->getElementsByTagName("name")->item(0)->nodeValue;
-//            $res
-            $shortName = "%".$item->getElementsByTagName("shortname")->item(0)->nodeValue."%";
-            $ruName = "%".$item->getElementsByTagName("rusname")->item(0)->nodeValue."%";
-            $stmt->bindValue(":full_name", $name, PDO::PARAM_STR);
-            $stmt->bindValue(":en_name", $shortName, PDO::PARAM_STR);
-            $stmt->bindValue(":ru_name", $ruName, PDO::PARAM_STR);
-            $result = $stmt->execute();
-            if ($result) {
-                $row = $stmt->fetch();
-                if ($row) {
+            $name = SphinxAdapter::escapeString($item->getElementsByTagName("name")->item(0)->nodeValue);
+//            echo $name.PHP_EOL;exit;
+            $stm->bindParam(":name", $name, PDO::PARAM_STR);
+            $res = $stm->execute();
+            if ($res) {
+                if ($row = $stm->fetch(PDO::FETCH_ASSOC)) {
+                    $goodQueryStatement->bindParam(":id", $row['id'], PDO::PARAM_INT);
+                    $goodQueryStatement->execute();
+                    $row = $goodQueryStatement->fetch();
                     $domf = new DOMDocument();
                     $f = html_entity_decode($row['features'], ENT_QUOTES, 'utf-8');
                     $f = str_replace("&", "&amp;", $f);
@@ -102,12 +113,8 @@ class XmlAnalizer {
                     $item->appendChild($doc->importNode($features, true));
                     $k++;
                 }
-                //test+++
-//                if (sizeof($xml) == 4) {
-//                    return "asd";
-//                    return serialize(implode(PHP_EOL, $xml));
-//                }
-                //test---
+            } else {
+                var_dump($stm->errorInfo());
             }
             $xml[] = $doc->saveXML($item);
         }

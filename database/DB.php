@@ -183,7 +183,7 @@ class DB extends PDO {
         $start = microtime(true);
         $result = parent::query($statement);
         $this -> runtime = microtime(true)-$start;
-        return $result;
+        return ($result)?$result:false;
     }
 
     public function fetch() {
