@@ -1,4 +1,5 @@
 <?php
+ini_set("pcre.backtrack_limit", 10000000);
 $args = $argv;
 $args = array_flip($args);
 if (isset($args['test'])) {
@@ -45,6 +46,25 @@ if (isset($args['test'])) {
     }
     $dom->appendChild($root);
     $dom->save("categories.xml");
+    exit;
+} elseif (isset($args['clients'])) {
+    require_once 'simplehtmldom/simple_html_dom.php';
+    $html = file_get_html("browsers.html");
+    $catRows = $html->find(".rt");
+    $dom = new DOMDocument('1.0', 'utf-8');
+    $root = $dom->createElement("browsers", "");
+    foreach ($catRows as $row) {
+        $client = $row->children(0)->plaintext;
+        $accept = $row->children(1)->plaintext;
+        $catNode = $dom->createElement("browser", "");
+        $urlNode = $dom->createElement("client", $client);
+        $nameNode = $dom->createElement("accept", $accept);
+        $catNode->appendChild($urlNode);
+        $catNode->appendChild($nameNode);
+        $root->appendChild($catNode);
+    }
+    $dom->appendChild($root);
+    $dom->save("browsers.xml");
     exit;
 }
 
