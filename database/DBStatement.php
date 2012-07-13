@@ -36,11 +36,11 @@ class DBStatement extends PDOStatement {
         return parent::fetch($fetchMode, $cursor_orientation, $cursor_offset);
     }
 
-    public function  fetchAll($fetchMode = null, $column_index = null, $ctor_args = nullarray) {
+    public function  fetchAll($fetchMode = null, $column_index = null, $ctor_args = array()) {
         if (is_null($fetchMode)) {
             $fetchMode = $this->pdo->getFetchMode();
         }
-        return parent::fetchAll($fetchMode, $column_index, $ctor_args);
+        return parent::fetchAll($fetchMode);
     }
 
 }

@@ -66,6 +66,19 @@ if (isset($args['test'])) {
     $dom->appendChild($root);
     $dom->save("browsers.xml");
     exit;
+} elseif (isset($args["browsers"])) {
+    $dom = new DOMDocument('1.0', 'utf-8');
+    $dom->load("browsers.xml");
+    $brs = $dom->getElementsByTagName("browser");
+    $str = '';
+    foreach ($brs as $br) {
+        $userAgent = $br->getElementsBytagName("client")->item(0)->nodeValue;
+        $accept = $br->getElementsBytagName("accept")->item(0)->nodeValue;
+        $str .= "\tarray('useragent' => '".$userAgent."', 'accept' => '".$accept."'),".PHP_EOL;
+    }
+    $str = "return array(".PHP_EOL.$str.");";
+    file_put_contents("browsers.php", $str);
+    exit;
 }
 
 
@@ -97,5 +110,9 @@ for ($i = 0; $i < THREADS_COUNT; $i++) {
     $joinPoint->add($threads[$i]);
 }
 $joinPoint->waitTillReady();
+
+
+
 $exTime = time()-$t;
+echo "Parser execution time: ".$exTime." sec.".PHP_EOL;
 ?>

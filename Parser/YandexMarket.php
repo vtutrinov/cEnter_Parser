@@ -31,17 +31,12 @@ class Parser_YandexMarket {
         }
         $items = $dom->getElementsByTagName("category");
         
-        $dom1 = new DOMDocument('1.0', 'utf-8');
-        $successLoad  =false;
-        while (!$successLoad) {
-            $successLoad = $dom1->load('browsers.xml');
-        }
-        $browsers = $dom1->getElementsByTagName("browser");
-        $browserLength = $browsers->length;
+        $browsers = include 'browsers.php';
+        $browserLength = sizeof($browsers);
         
         $randomBrowserIndex = rand(0, $browserLength);
-        $accept = $browsers->item($randomBrowserIndex)->getElementsByTagName("accept")->item(0)->nodeValue;
-        $userAgent = $browsers->item($randomBrowserIndex)->getElementsByTagName("client")->item(0)->nodeValue;
+        $accept = $browsers[$randomBrowserIndex]["accept"];
+        $userAgent = $browsers[$randomBrowserIndex]["useragent"];
         
         $ch = curl_init();
         curl_setopt_array($ch, array(
@@ -69,6 +64,7 @@ class Parser_YandexMarket {
         $config -> params -> dbname = DB;
         $db = new DB($config);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->query("SET NAMES 'utf8'; SET CHARACTER SET 'utf8';");
         for ($i = $start; $i < $end; $i++) {
             $category = $items->item($i);
             $url = $category->getElementsByTagName("url")->item(0)->nodeValue;
@@ -90,8 +86,8 @@ class Parser_YandexMarket {
                 $proxy = Parser_Proxy::getRandom($proxyList, self::PROXY_REQUEST_TIMEOUT);//берём рандомный прокси из списка, прокси должен "стоят" не меньше времени (в сек.), указанного вторым параметром
                 
                 $randomBrowserIndex = rand(0, $browserLength);
-                $accept = $browsers->item($randomBrowserIndex)->getElementsByTagName("accept")->item(0)->nodeValue;
-                $userAgent = $browsers->item($randomBrowserIndex)->getElementsByTagName("client")->item(0)->nodeValue;
+                $accept = $browsers[$randomBrowserIndex]["accept"];
+                $userAgent = $browsers[$randomBrowserIndex]["useragent"];
                 
                 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxy['user'].":".$proxy['pass']);
                 curl_setopt($ch, CURLOPT_PROXY,$proxy['ip'].":".$proxy['port']);
@@ -115,8 +111,8 @@ class Parser_YandexMarket {
                         while (!$res) {
                             $proxy = Parser_Proxy::getRandom($proxyList, self::PROXY_REQUEST_TIMEOUT);
                             $randomBrowserIndex = rand(0, $browserLength);
-                            $accept = $browsers->item($randomBrowserIndex)->getElementsByTagName("accept")->item(0)->nodeValue;
-                            $userAgent = $browsers->item($randomBrowserIndex)->getElementsByTagName("client")->item(0)->nodeValue;
+                            $accept = $browsers[$randomBrowserIndex]["accept"];
+                            $userAgent = $browsers[$randomBrowserIndex]["useragent"];
                             curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxy['user'].":".$proxy['pass']);
                             curl_setopt($ch, CURLOPT_PROXY,$proxy['ip'].":".$proxy['port']);
                             curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
@@ -268,6 +264,60 @@ class Parser_YandexMarket {
         echo getmypid()." - end category ".$cid.PHP_EOL;
         return;
     }
+    
+    public static function packFeatures($totalCount, $threadsCount, $index) {
+        $mod = $totalCount%$threadsCount;
+        $limit = ($totalCount-$mod)/$threadsCount;
+        $start = $index*$limit;
+        if ($index == ($threadsCount-1)) {
+            $limit = $limit+$mod;//количество категорий на один поток (если он в конце списка потоков)
+        }
+        $end = $start+$limit;
+        $config = new stdClass();
+        $config -> adapter = DB_ADAPTER;
+        $config -> params -> host = DB_HOST;
+        $config -> params -> port = DB_PORT;
+        $config -> params -> user = DB_USER;
+        $config -> params -> pwd = DB_PASS;
+        $config -> params -> dbname = DB;
+        $db = new DB($config);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->query("SET NAMES 'utf8'; SET CHARACTER SET 'utf8';");
+        
+        $propertiesQueryStatement = $db->prepare("SELECT p.name n, pv.value v FROM properties AS p JOIN property_values AS pv ON (pv.prop_id=p.id) WHERE pv.product_id=:pid");
+        $goodUpdateQueryStatement = $db->prepare("UPDATE goods SET features=:fe WHERE id=:pid");
+        
+        $sql = "SELECT id FROM goods WHERE source='market' LIMIT :limit OFFSET :offset";
+//        echo $sql.PHP_EOL;exit;
+        $stm = $db->prepare($sql);
+        $stm->bindParam(":limit", $limit, PDO::PARAM_INT);
+        $stm->bindParam(":offset", $start, PDO::PARAM_INT);
+        $stm->execute();
+        while ($row = $stm->fetch()) {
+            $propertiesQueryStatement->bindParam(":pid", $row['id'], PDO::PARAM_INT);
+            $res = $propertiesQueryStatement->execute();
+            $properties = $propertiesQueryStatement->fetchAll();
+            $dom = new DOMDocument('1.0', 'utf-8');
+            $rootNode = $dom->createElement("features", "");
+            foreach ($properties as $property) {
+                $propName = $property['n'];
+                $propValue = $property['v'];
+                $featureNode = $dom->createElement("feature", "");
+                $featureNameNode = $dom->createElement("name", $propName);
+                $featureValueNode = $dom->createElement("value", $propValue);
+                $featureNode->appendChild($featureNameNode);
+                $featureNode->appendChild($featureValueNode);
+                $rootNode->appendChild($featureNode);
+            }
+            $dom->appendChild($rootNode);
+            $xml = $dom->saveXML();
+            $goodUpdateQueryStatement->bindParam(":fe", $xml, PDO::PARAM_STR);
+            $goodUpdateQueryStatement->bindParam(":pid", $row['id'], PDO::PARAM_INT);
+            $goodUpdateQueryStatement->execute();
+        }
+        return;
+    }
+    
     
 }
 

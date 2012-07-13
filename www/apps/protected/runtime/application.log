@@ -1,0 +1,1228 @@
+2012/07/12 12:17:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "start".' in /var/www/cEnter_parser/www/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CController.php(271): CController->missingAction('start')
+#1 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(276): CController->run('start')
+#2 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('parser/start')
+#3 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/www/apps/index.php?r=parser/start
+HTTP_REFERER=http://dosparser.pr:6543/g/
+---
+2012/07/12 12:19:00 [error] [exception.CException] exception 'CException' with message 'Property "CUrlManager.showFileName" is not defined.' in /var/www/cEnter_parser/www/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/YiiBase.php(222): CComponent->__set('showFileName', false)
+#1 /var/www/cEnter_parser/www/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#2 /var/www/cEnter_parser/www/framework/base/CApplication.php(503): CModule->getComponent('urlManager')
+#3 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(134): CApplication->getUrlManager()
+#4 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/g/
+---
+2012/07/12 13:11:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:20:49 [error] [exception.CException] exception 'CException' with message 'ParserController cannot find the requested view "parser_start".' in /var/www/cEnter_parser/www/framework/web/CController.php:879
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CController.php(783): CController->renderPartial('parser_start', NULL, true)
+#1 /var/www/cEnter_parser/www/apps/protected/controllers/ParserController.php(18): CController->render('parser_start')
+#2 /var/www/cEnter_parser/www/framework/web/actions/CInlineAction.php(50): ParserController->actionStart()
+#3 /var/www/cEnter_parser/www/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /var/www/cEnter_parser/www/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /var/www/cEnter_parser/www/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(276): CController->run('start')
+#7 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('parser/start')
+#8 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/parser/start
+---
+2012/07/12 13:20:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:24:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:24:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:26:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:26:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:26:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "search".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('search')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/search
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:26:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/search
+---
+2012/07/12 13:26:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:27:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:27:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:27:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "search".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('search')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/search
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:27:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/search
+---
+2012/07/12 13:27:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:27:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:27:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:30:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:30:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:30:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:37:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 13:37:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 13:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:41:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "price/goods".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('price/goods')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/price/goods
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 13:41:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/goods
+---
+2012/07/12 13:41:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:41:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "price/newprice".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('price/newprice')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/price/newprice
+HTTP_REFERER=http://dosparser.pr:6543/price/goods
+---
+2012/07/12 13:41:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/newprice
+---
+2012/07/12 13:41:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:41:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "search".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('search')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/search
+HTTP_REFERER=http://dosparser.pr:6543/price/newprice
+---
+2012/07/12 13:41:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/search
+---
+2012/07/12 13:41:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:41:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:41:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:41:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "search".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('search')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/search
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:41:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/search
+---
+2012/07/12 13:41:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:41:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:41:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:42:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:42:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:42:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "search".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('search')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/search
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:42:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/search
+---
+2012/07/12 13:42:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:42:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:42:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "search".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('search')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/search
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/search
+---
+2012/07/12 13:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 13:42:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 13:42:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 14:45:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "search".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('search')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/search
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 14:45:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/search
+---
+2012/07/12 14:45:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 14:45:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 14:45:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 14:51:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 14:51:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 14:52:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 14:52:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 14:52:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 14:52:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 14:54:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 14:54:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 14:54:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 14:54:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 14:57:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 14:57:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 14:57:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 14:57:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 15:01:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 15:01:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 15:01:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 15:01:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 15:02:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 15:02:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 15:02:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 15:02:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 15:03:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 15:03:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 15:03:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 15:03:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:00:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "price/newprice".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('price/newprice')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/price/newprice
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 16:00:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/newprice
+---
+2012/07/12 16:00:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/newprice
+---
+2012/07/12 16:10:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:14:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/newprice
+---
+2012/07/12 16:14:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:14:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/newprice
+---
+2012/07/12 16:14:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:15:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/newprice
+---
+2012/07/12 16:15:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:15:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:16:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:16:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:16:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:16:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/newprice
+---
+2012/07/12 16:16:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 16:17:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 17:01:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 17:01:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 17:23:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 17:23:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 17:23:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 17:23:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 17:58:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/goods
+---
+2012/07/12 17:58:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 18:01:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/price/goods
+---
+2012/07/12 18:01:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 19:50:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "search".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('search')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/search
+HTTP_REFERER=http://dosparser.pr:6543/price/goods
+---
+2012/07/12 19:50:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/search
+---
+2012/07/12 19:50:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 20:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 20:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 20:33:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 20:33:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 20:36:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 20:36:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 20:36:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 20:36:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 20:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 20:37:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 20:37:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 20:37:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 20:39:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 20:39:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 20:39:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 20:39:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 22:07:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 22:07:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 22:07:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 22:07:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 22:13:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/parser/start
+---
+2012/07/12 22:13:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/12 22:13:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-responsive.css".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('css/bootstrap-r...')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-responsive.css
+HTTP_REFERER=http://dosparser.pr:6543/site
+---
+2012/07/12 22:13:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/cEnter_parser/www/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/cEnter_parser/www/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/cEnter_parser/www/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/cEnter_parser/www/apps/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---

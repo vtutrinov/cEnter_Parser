@@ -190,7 +190,7 @@ class Parser_SuperCategory {
         echo chr(27)."[1;33m"."PID: ".  getmypid().". Get goods by urls (".sizeof($urls).") ".chr(27)."[0m";
         echo PHP_EOL;
         $file = realpath(dirname(__FILE__)."/../urls.txt");
-        $stmt = self::$db ->prepare("INSERT INTO ".DB_TABLE." (name, articul, description, price, info, features) VALUES(:name, :art, :desc, :price, :info, :features)");
+        $stmt = self::$db ->prepare("INSERT INTO ".DB_TABLE." (name, articul, description, price, info, features, source) VALUES(:name, :art, :desc, :price, :info, :features, 'enter')");
         foreach ($urls as $url) {
             $proxy = Parser_Proxy::getRandom(self::$proxies);
             curl_setopt($ch, CURLOPT_URL, $url);

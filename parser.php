@@ -9,7 +9,7 @@
 
 
 $t = time();
-error_reporting(E_ALL^E_NOTICE);
+error_reporting(E_ALL^E_NOTICE^E_WARNING);
 define("BASE_URL", "http://www.enter.ru");
 define("DB", "center");
 define("DB_TABLE", "goods");
@@ -57,7 +57,9 @@ $treadProxyCount = floor($proxiesCount/$superCategoryCount);
 file_put_contents(dirname(__FILE__)."/urls.txt", "");
 
 $db = DBManager::get(DB_ADAPTER, DB_HOST, DB_PORT, DB_USER, DB_PASS, DB);
-$db->exec("TRUNCATE TABLE goods;");
+$db->exec("TRUNCATE TABLE property_values");
+$db->exec("TRUNCATE TABLE properties");
+$db->exec("TRUNCATE TABLE goods");
 $db = null;
 
 for ($i = 0; $i < $superCategoryCount; $i++) {
