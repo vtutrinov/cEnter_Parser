@@ -73,6 +73,7 @@ class Parser_Egg {
                     $count = intval($totalCount[1]);
 //                    var_dump($totalCount);exit;
                     $pageCount = ceil(($count/100));
+                    echo $pageCount;exit;
                 }
                 if ($l == $pageCount) {
                     $catFinished = true;
