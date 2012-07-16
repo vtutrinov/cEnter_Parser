@@ -8,6 +8,8 @@ class Parser_Egg {
     
     protected static $compareUrl = "http://www.newegg.com/Product/Productcompare.aspx?CompareItemList=";
     
+    protected static $pageCount = 0;
+    
     public static function parse($urls, $tcount, $pid) {
         $urlCount = count($urls);
         $mod = $urlCount%$tcount;
@@ -72,9 +74,10 @@ class Parser_Egg {
                     preg_match("/id=\"RecordCount_1\"[\s\S]*?>([\d]*)?</ui", $html, $totalCount);
                     $count = intval($totalCount[1]);
 //                    var_dump($totalCount);exit;
-                    $pageCount = ceil(($count/100));
+                    self::$pageCount = ceil(($count/100));
                 }
-                if ($l == $pageCount) {
+                if ($l == self::$pageCount) {
+//                    var_dump("cat ".$url." finished. Pages: ".self::$pageCount);
                     $catFinished = true;
                 }
             }
