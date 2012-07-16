@@ -1,7 +1,7 @@
 <?php
 //echo urldecode('http://www.newegg.com/Product/Productcompare.aspx?CompareItemList=389%7C30-997-618%5E30-997-618-01%23%2C30-994-371%5E30-994-371-TS%2C30-994-935%5E30-994-935-TS%2C30-994-594%5E30-994-594-03%23%2C30-992-367%5E30-992-367-02%23');
 //exit;
-error_reporting(E_ALL^E_NOTICE);
+error_reporting(E_ALL^E_NOTICE^E_WARNING);
 $t = time();
 ini_set("pcre.backtrack_limit", 10000000);
 define("THREADS_COUNT", 10);

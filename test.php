@@ -2,10 +2,7 @@
 error_reporting(E_ALL^E_NOTICE^E_WARNING);
 ini_set("pcre.backtrack_limit", 10000000);//PCRE некорректно работает при длиннах строк более 1000000 байт
 $content = file_get_contents("test.html");
-preg_match("/id=\"Details_Content\"([\s\S]*)?<\/fieldset>[\s\r\t\n]*?<\/div>[\s\t\r\n]*?<\/div>/sui", $content, $goodNames);
-if (preg_last_error() == PREG_BACKTRACK_LIMIT_ERROR) {
-    print 'Backtrack limit was exhausted!';
-}
+preg_match("/id=\"RecordCount_1\"[\s\S]*?>([\d]*)?</sui", $content, $goodNames);
 echo $goodNames[1];
 exit;
 

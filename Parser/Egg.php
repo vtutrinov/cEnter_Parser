@@ -69,7 +69,7 @@ class Parser_Egg {
 //                }
                 
                 if ($l == 1) {
-                    preg_match("/class=\"recordCount\"[\s\S]*?Showing[\s\S]*of\s([\d]*)?\s/", $html, $totalCount);
+                    preg_match("/id=\"RecordCount_1\"[\s\S]*?>([\d]*)?</ui", $html, $totalCount);
                     $count = intval($totalCount[1]);
 //                    var_dump($totalCount);exit;
                     $pageCount = ceil(($count/100));
@@ -103,7 +103,7 @@ class Parser_Egg {
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->query("SET NAMES 'utf8'; SET CHARACTER SET 'utf8';");
         
-        $stm = $db->prepare("INSERT INTO goods(`name`, `articul`, `features`) VALUES(:n, :art, :feat)");
+        $stm = $db->prepare("INSERT INTO goods(`name`, `articul`, `features`, `source`) VALUES(:n, :art, :feat, 'newegg')");
         
         foreach ($goods as $catId => $gUrls) {
             foreach ($gUrls as $url) {
@@ -129,8 +129,8 @@ class Parser_Egg {
                     $c = sizeof($propNames);
                     for ($i = 0; $i < $c; $i++) {
                         $featureNode = $dom->createElement("feature", "");
-                        $featureNameNode = $dom->createElement("name", $propNames[$i]);
-                        $featureValueNode = $dom->createElement("value", $propValues[$i]);
+                        $featureNameNode = $dom->createElement("name", htmlentities(trim($propNames[$i], " "), ENT_QUOTES, 'UTF-8'));
+                        $featureValueNode = $dom->createElement("value", htmlentities(trim($propValues[$i], " "), ENT_QUOTES, 'UTF-8'));
                         $featureNode->appendChild($featureNameNode);
                         $featureNode->appendChild($featureValueNode);
                         $root->appendChild($featureNode);
