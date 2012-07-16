@@ -55,7 +55,9 @@ class Parser_Egg {
                 ));
                 $html = curl_exec($ch);
                 $info = curl_getinfo($ch);
-                
+                if ($u != $info['url']) {//redirect detected!!!
+                    $goods[$subCat][] = $info['url'];break;
+                }
                 preg_match_all("/class=\"itemCell\"[\s\S]*?href=\"([^\s]*Product\.aspx[^\"]*)?\"/ui", $html, $gurls);
                 $simple = array_merge($simple, $gurls[1]);
 //                var_dump("http_code: ".$info['http_code']);
