@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_ALL^E_NOTICE);
+error_reporting(E_ALL^E_NOTICE^E_WARNING);
 $t = time();
 require_once dirname(__FILE__).'/Threadi/Loader.php';
 require_once 'database/ClassLoader.php';
 spl_autoload_register(array('ClassLoader', 'autoload'));
-require_once 'sphinxapi.php';
+//require_once 'sphinxapi.php';
 require_once 'SphinxAdapter.php';
 
 //$sphinx = new SphinxClient();
@@ -88,11 +88,12 @@ class XmlAnalizer {
         $config -> params -> dbname = "";
         $dbSphinx = new DB($config);
         $dbSphinx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $stm = $dbSphinx->prepare("SELECT * FROM centerGoods WHERE MATCH(:name) OPTION ranker=sph04");
+        $stm = $dbSphinx->prepare("SELECT * FROM centerGoodsMarket WHERE MATCH(:name) OPTION ranker=sph04");
         $k = 0;
         for ($i = $start; $i < $end; $i++) {
             $item = $items->item($i);
-            $name = SphinxAdapter::escapeString($item->getElementsByTagName("name")->item(0)->nodeValue);
+            $name = SphinxAdapter::escapeString($item->getElementsByTagName("shortname")->item(0)->nodeValue);
+//            echo $name.PHP_EOL;exit;
 //            echo $name.PHP_EOL;exit;
             $stm->bindParam(":name", $name, PDO::PARAM_STR);
             $res = $stm->execute();
